@@ -40,8 +40,8 @@ def select_all():
 # ---Update
 
 def update(tag):
-    sql= "UPDATE tasks SET (name) = (%s) WHERE id = %s"
-    values = [tag.name]
+    sql= "UPDATE tags SET (name) = (%s) WHERE id = %s"
+    values = [tag.name,tag.id]
     run_sql(sql,values)
 
 # --Delete

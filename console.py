@@ -1,8 +1,10 @@
 import pdb
 from models.merchant import Merchant
 from models.tag import Tag
+from models.transaction import Transaction
 import repositories.merchant_repository as mer_rep
 import repositories.tag_repository as tag_rep
+import repositories.transaction_repository as tran_rep
 
 mer_rep.delete_all()
 tag_rep.delete_all()
@@ -35,5 +37,13 @@ print(tag_rep.select(2))
 
 print(tag_rep.select_all)
 
-# pdb.runcall(mer_rep.select_all())
+
+tran1 = Transaction(45.55, "12/12/12", "Cigarettes and wine", None, "Utilities")
+tran_rep.save(tran1)
+
+tran2 = Transaction(12.22, "11/11/11,", "Bus to funeral", "CityBus", "Transport")
+tran_rep.save(tran2)
+
+tran2 = Transaction(23.12, "9/9/09", "Spam and juice", "Lidil", "Food")
+tran_rep.save(tran2)
 pdb.set_trace()
