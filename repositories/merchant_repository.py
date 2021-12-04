@@ -39,7 +39,10 @@ def select_all():
 
 # ---Update
 
-
+def update(merchant):
+    sql= "UPDATE tasks SET (name) = (%s) WHERE id = %s"
+    values = [merchant.name]
+    run_sql(sql,values)
 
 # --Delete
 
