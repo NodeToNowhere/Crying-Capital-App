@@ -27,13 +27,27 @@ def select(id):
     return merchant
 
 
+def select_all():
+    merchants = []
+    sql = "SELECT * FROM merchants"
+    results = run_sql(sql)
+    for row in results:
+        merchant = Merchant(row["merchant"])
+        merchants.append(merchant)
+    return merchants
+
+
 # ---Update
 
+
+
 # --Delete
+
 
 def delete_all():
     sql = "DELETE FROM merchants"
     run_sql(sql)
+
 
 def delete(id):
     sql = "DELETE FROM merchants WHERE id = %s"

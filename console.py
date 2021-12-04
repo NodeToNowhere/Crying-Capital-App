@@ -15,3 +15,7 @@ mer_rep.save(mer2)
 
 mer3 = Merchant("ShellCorp")
 mer_rep.save(mer3)
+
+print(mer_rep.select(3))
+
+print(mer_rep.select_all)
