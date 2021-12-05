@@ -2,6 +2,9 @@ from db.run_sql import run_sql
 from models.transaction import Transaction
 
 
+#Todo - Write update_transaction for merchant and tag that links tables that can take null/empty
+
+
 # ---Create
 
 
