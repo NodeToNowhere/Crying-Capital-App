@@ -32,7 +32,7 @@ def select_all():
     sql = "SELECT * FROM tags"
     results = run_sql(sql)
     for row in results:
-        tag = tag(row["tag"])
+        tag = Tag(row["tag"])
         tags.append(tag)
     return tags
 

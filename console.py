@@ -52,4 +52,4 @@ tran_rep.save(tran4)
 pdb.set_trace()
 
 
-#
+#Have tag+merchant "none" that fills sql with "none"
