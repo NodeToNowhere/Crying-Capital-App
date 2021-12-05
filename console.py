@@ -38,12 +38,13 @@ print(tag_rep.select(2))
 print(tag_rep.select_all)
 
 
-tran1 = Transaction(45.55, "12/12/12", "Cigarettes and wine", None, "Utilities")
+tran1 = Transaction(45.55, "12/12/12", "Cigarettes and wine", mer2, tag3)
 tran_rep.save(tran1)
 
-tran2 = Transaction(12.22, "11/11/11,", "Bus to funeral", "CityBus", "Transport")
+tran2 = Transaction(12.22, "11/11/11,", "Bus to funeral", mer3,tag2)
 tran_rep.save(tran2)
 
-tran2 = Transaction(23.12, "9/9/09", "Spam and juice", "Lidil", "Food")
+tran2 = Transaction(23.12, "9/9/09", "Spam and juice", mer1, tag1)
 tran_rep.save(tran2)
+
 pdb.set_trace()

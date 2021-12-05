@@ -7,5 +7,5 @@ class Transaction:
         self.date = date
         self.description = description
         self.merchant = merchant
-        self.tag_id = tag
-        self.id_id = id
+        self.tag = tag
+        self.id = id
