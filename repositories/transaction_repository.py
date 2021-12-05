@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.transaction import Transaction
 from models.merchant import Merchant
 from models.tag import Tag
-import repositories.merchant_repository as mer_rep
-import repositories.tag_repository as tag_rep
+import repositories.merchant_repository as mer_repo
+import repositories.tag_repository as tag_repo
 
 
 #Todo - Write update_transaction for merchant and tag that links tables that can take null/empty
@@ -45,8 +45,8 @@ def select_all():
     sql = "SELECT * FROM transactions"
     results = run_sql(sql)
     for row in results:
-        merchant = mer_rep.select(row['merchant'])
-        tag = tag_rep.select(row['tag'])
+        merchant = mer_repo.select(row['merchant'])
+        tag = tag_repo.select(row['tag'])
         transaction = transaction(row["amount"], row["date"], row["description"],merchant, tag, row['id'])
         transactions.append(transaction)
     return transactions
