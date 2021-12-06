@@ -11,8 +11,7 @@ tags_blueprint = Blueprint("transactions", __name__)
 @tags_blueprint.route("/labels")
 def labels():
     tags = tag_repo.select_all()
-    merchants = merchant_repo.select_all()
-    return render_template("labels/new.html", tags=tags, merchants=merchants)
+    return render_template("labels/new.html", tags=tags)
 
 
 # POST
