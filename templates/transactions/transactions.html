@@ -35,13 +35,13 @@
       <label for="merchant">Merchant:</label>
       <select name="merchant_id" id="merchant">
         {% for merchant in merchants %}
-        <option value="{{merchant.id}}">{{merchant.id}}</option>
+        <option value="{{merchant.id}}">{{merchant.name}}</option>
         {% endfor %}
       </select>
       <label for="tag">Tag:</label>
       <select name="tag_id" id="tag">
         {% for tag in tags %}
-        <option value="{{tag.id}}">{{tag.id}}</option>
+        <option value="{{tag.id}}">{{tag.name}}</option>
         {% endfor %}
       </select>
 
