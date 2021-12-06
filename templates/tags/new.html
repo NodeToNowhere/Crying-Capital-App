@@ -2,22 +2,17 @@
 <h3>Add a label</h3>
 {% block content %}
 <div>
-    <p>
-        <a class='button' href="#tag-form">Add New Tags</a>
-    </p>
+  <p>
+    <a class="button" href="#tag-form">Add New Tags</a>
+  </p>
 </div>
 <div class="overlay" id="tag-form">
   <div class="popup">
-    <form action="/labels/new/tag" class="form-container" method="post">
+    <form action="/tags/new/tag" class="form-container" method="post">
       <h3>New tag</h3>
 
       <label for="tag">Name:</label>
-      <input
-        type="text"
-        placeholder="Enter tag"
-        name="tag_name"
-        id="tag"
-      />
+      <input type="text" placeholder="Enter tag" name="tag_name" id="tag" />
 
       <button type="submit" class="submit-btn">Submit</button>
       <a href="#"><button type="submit" class="cancel-btn">Cancel</button></a>
