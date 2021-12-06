@@ -11,7 +11,7 @@ tags_blueprint = Blueprint("transactions", __name__)
 @tags_blueprint.route("/tags")
 def tags():
     tags = tag_repo.select_all()
-    return render_template("tags/show.html", tags=tags)
+    return render_template("/tags.html", tags=tags)
 
 
 # POST
@@ -19,7 +19,7 @@ def tags():
 # split into tag and merchant (new)
 
 
-@tags_blueprint.route("/tags/new/tag", methods=["POST"])
+@tags_blueprint.route("/tags/new", methods=["POST"])
 def new_tag():
     new_tag = Tag(request.form["tag_name"])
     tag_repo.save(new_tag)

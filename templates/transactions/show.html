@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% block content %} 
 <h3>Transactions</h3>
 <a action="/transactions/new" href="/transactions/new">Add Transactions</a>
-{% block content %} {% for transaction in transactions %}
+
+{% for transaction in transactions %}
 <li>
   Amount:{{transaction.amount}}, Date:{{transaction.date}},
   Description:{{transaction.description}},
