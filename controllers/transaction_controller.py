@@ -12,4 +12,4 @@ transaction_blueprint = Blueprint("transaction", __name__)
 @transaction_blueprint.route("/transactions")
 def transactions():
     transactions = transaction_repo.select_all()
-    return render_template("/transactions/transactions.html", transactions=transactions)
+    return render_template("/transactions/show.html", transactions=transactions)
