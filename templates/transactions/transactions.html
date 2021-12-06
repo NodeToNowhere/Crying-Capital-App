@@ -32,19 +32,20 @@
         name="description"
         id="description"
       />
-
-      <select name="merchant" id="merchant">
+      <label for="merchant">Merchant:</label>
+      <select name="merchant_id" id="merchant">
         {% for merchant in merchants %}
-        <option value="merchant_id">{{merchant.name}}</option>
+        <option value="{{merchant.id}}">{{merchant.id}}</option>
         {% endfor %}
       </select>
-      <select name="tag" id="tag">
-        tag: {% for tag in tags %}
-        <option value="tag_id">{{tag.name}}</option>
+      <label for="tag">Tag:</label>
+      <select name="tag_id" id="tag">
+        {% for tag in tags %}
+        <option value="{{tag.id}}">{{tag.id}}</option>
         {% endfor %}
       </select>
 
-      <button type="submit" class="submit-btn" value="Submit"></button>
+      <button type="submit" class="submit-btn">Submit</button>
       <a href="#"><button type="submit" class="cancel-btn">Cancel</button></a>
     </form>
   </div>
