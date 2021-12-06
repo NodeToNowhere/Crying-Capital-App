@@ -3,15 +3,13 @@ from flask import Blueprint
 from models.merchant import Merchant
 from models.tag import Tag
 import repositories.tag_repository as tag_repo
-import repositories.merchant_repository as mer_repo
+import repositories.merchant_repository as merchant_repo
 
-trans_bp = Blueprint("transactions", __name__)
-
-@trans_bp.route('/')
-def index():
-    return render_template('index.html')
+transaction_blueprint = Blueprint("transaction", __name__)
 
 
-    
-
-    
+@transaction_blueprint.route("/transaction")
+def transaction():
+    return render_template(
+        "/transactions/transaction.html", test="this is transaction test"
+    )
