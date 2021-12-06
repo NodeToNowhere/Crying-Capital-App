@@ -1,6 +1,5 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Merchants</h1>
-<a action="/merchants/new" href="/merchants/new"><b >Add Merchant</b></a>
 <div>
     <p>
       <a href="#merchant-form"
@@ -12,7 +11,7 @@
   </div>
   <div class="overlay" id="merchant-form">
     <div class="popup">
-      <form action="/labels/new" class="form-container" method="post">
+      <form action="/merchants/new" class="form-container" method="post">
         <h3>New Merchant</h3>
   
         <label for="merchant">Name:</label>
