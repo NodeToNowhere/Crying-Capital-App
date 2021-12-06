@@ -1,13 +1,8 @@
-{% extends 'base.html' %} {% block content %}
-
-<h1>tags</h1>
 {% extends 'base.html' %}
 <h3>Tags</h3>
 <a action="/tags/new" href="/tags/new">Add a label</a>
-{% for tag in tags %}
+{% block content %} {% for tag in tags %}
 
 <li>Tag:{{tag.name}}</li>
 
-{% endfor %}
-
-{% endblock content %}
+{% endfor %} {% endblock content %}

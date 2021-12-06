@@ -13,3 +13,7 @@ transaction_blueprint = Blueprint("transaction", __name__)
 def transactions():
     transactions = transaction_repo.select_all()
     return render_template("/transactions/show.html", transactions=transactions)
+
+
+# @transaction_blueprint.route("transactions/new")
+#     pass
