@@ -18,12 +18,17 @@ def labels():
 # POST
 # show confirmation or goto labels?
 # split into tag and merchant (new)
-@tags_blueprint.route("/labels/new", methods=["POST"])
-def new_label():
-    new_tag = Tag(request.form["tag"])
-    tag_repo.save(new_tag)
-    new_merchant = Merchant(request.form["merchant"])
+@tags_blueprint.route("/labels/new/merchant", methods=["POST"])
+def new_merchant():
+    new_merchant = Merchant(request.form["merchant_name"])
     merchant_repo.save(new_merchant)
+    return redirect("/labels")
+
+
+@tags_blueprint.route("/labels/new/tag", methods=["POST"])
+def new_tag():
+    new_tag = Tag(request.form["tag_name"])
+    tag_repo.save(new_tag)
     return redirect("/labels")
 
 
