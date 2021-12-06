@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block content %}
+<h1>transactions</h1>
+<div>
+  <p>
+    <a href="#transaction-form"
+      ><button type="submit" class="create-new-btn">
+        Create new transaction
+      </button></a
+    >
+  </p>
+</div>
+<div class="overlay" id="transaction-form">
+  <div class="popup">
+    <form action="/transactions/new" class="form-container" method="post">
+      <h3>New transaction</h3>
+
+      <label for="amount">Amount:</label>
+      <input
+        type="text"
+        placeholder="Enter transaction"
+        name="amount_name"
+        id="amount"
+      />
+
+      <label for="date">Date:</label>
+      <input type="text" placeholder="Enter date" name="date_time" id="date" />
+
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        placeholder="Enter description"
+        name="description_text"
+        id="description"
+      />
+
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        placeholder="Enter description"
+        name="description_text"
+        id="description"
+      />
+
+      <button type="submit" class="submit-btn">Submit</button>
+      <a href="#"><button type="submit" class="cancel-btn">Cancel</button></a>
+    </form>
+  </div>
+</div>
+
+{% for transaction in transactions %}
+<li>transaction:{{transaction.name}}</li>
+
+{% endfor %} {% endblock content %}

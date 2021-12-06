@@ -11,7 +11,7 @@ tags_blueprint = Blueprint("transactions", __name__)
 @tags_blueprint.route("/tags")
 def tags():
     tags = tag_repo.select_all()
-    return render_template("/tags.html", tags=tags)
+    return render_template("tags/tags.html", tags=tags)
 
 
 # POST
