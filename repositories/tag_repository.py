@@ -23,7 +23,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        tag = Tag(result["tag"])
+        tag = Tag(result["tag"], result["id"])
     return tag
 
 
@@ -39,10 +39,12 @@ def select_all():
 
 # ---Update
 
+
 def update(tag):
-    sql= "UPDATE tags SET (name) = (%s) WHERE id = %s"
-    values = [tag.name,tag.id]
-    run_sql(sql,values)
+    sql = "UPDATE tags SET (name) = (%s) WHERE id = %s"
+    values = [tag.name, tag.id]
+    run_sql(sql, values)
+
 
 # --Delete
 
