@@ -1,9 +1,7 @@
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %}
 <h1>Merchants</h1>
-{% for merchant in merchants %}
-<li>{{merchant.name}}</li>
+<a action="/merchants/new" href="/merchants/new">Add a label</a>
+{% block content %} {% for merchant in merchants %}
+<li>Merchant:{{merchant.name}}</li>
 
-{% endfor %}
-<a action="/labels/new" href="/labels/new">Add a label</a>
-{% endblock content %}
+{% endfor %} {% endblock content %}
