@@ -18,6 +18,8 @@ def transactions():
 
 @transaction_blueprint.route("/transactions/new", methods=["POST"])
 def new_transaction():
+    # merchant = Merchant(request.form["merchant"])
+    # tag = Merchant(request.form["tag"])
     new_transaction = Transaction(
         request.form["amount"],
         request.form["date"],
