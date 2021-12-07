@@ -52,6 +52,7 @@ body {
 }
 .header-text {
   grid-area: header;
+  font-weight: 700;
 }
 .button-container {
   border-radius: 4px;

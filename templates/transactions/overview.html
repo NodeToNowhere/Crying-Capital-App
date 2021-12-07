@@ -9,7 +9,7 @@
 
   <div class="card card-expenses">
     <h3>Expenses</h3>
-    <p>{{total}}</p>
+    <p>£ {{total}}</p>
   </div>
   <div class="card card-monthly">
     <h3>Monthly</h3>
@@ -28,14 +28,18 @@
       <th>Merchant</th>
       <th>Tag</th>
     </tr>
-    <!-- #FOR loop to show 5-6 tables -->
+    {% for transaction in transactions %}
     <tr>
-      <!-- <td>HERE BE DATA</td> -->
-      <!-- <td>HERE BE DATA</td> -->
-      <!-- <td>HERE BE DATA</td> -->
-      <!-- <td>HERE BE DATA</td> -->
-      <!-- <td>HERE BE DATA</td> -->
+      <th>{{transaction.amount}}</th>
+      <th>{{ transaction.date }}</th>
+      <th>{{transaction.description}}</th>
+      <th>{{transaction.merchant.name}}</th>
+      <th>
+        {{transaction.tag.name}}
+        <input type="submit" class="btn delete-btn" value="delete" />
+      </th>
     </tr>
+    {% endfor %}
   </table>
 </main>
 
