@@ -1,11 +1,9 @@
-
-
-body{
-  background: #262622;
-  font-family: 'Fredoka One', cursive;
-  font-family: 'Readex Pro', sans-serif;
+body {
+  background: white;
+  color: black;
+  font-family: "Fredoka One", cursive;
+  font-family: "Readex Pro", sans-serif;
 }
-
 
 .overlay {
   position: absolute;
@@ -19,24 +17,22 @@ body{
   opacity: 0;
 }
 .popup {
-  width: 300px;
-  height: 400px;
-  z-index: 2;
+  margin: 250px auto;
   padding: 20px;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,150%) scale(0);
-  padding: 20px;
-  background: #262626;
-  border-radius: 20px;
+  background: white;
   border: 1px solid #666;
-  box-shadow: 38 38 56px #1e1e1e,
-  -25px -25px 38px #1e1e1e;
-  z-index: 1;
+  border-radius: 20px;
+  width: 350px;
+  height: 350px;
+  box-shadow: 38px 38px 56px #1e1e1e, -25px -25px 38px #1e1e1e;
+  position: relative;
+  text-align: center;
 }
 .overlay:target {
   visibility: visible;
   opacity: 1;
 }
 
+.form-container {
+  display: grid | inline-grid;
+}

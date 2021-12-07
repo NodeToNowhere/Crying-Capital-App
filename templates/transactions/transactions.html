@@ -12,6 +12,18 @@
   <!-- ###---SHOW DATA---###  -->
   <p>Your total expense is {{total}}</p>
   {% for transaction in transactions %}
+
+
+  <div class="expense-container">
+    
+  </div>
+
+
+
+
+
+
+
   <li>
     Amount:{{transaction.amount}}, Date:{{ transaction.date }},
     Description:{{transaction.description}},
@@ -27,7 +39,8 @@
 <div class="overlay" id="transaction-form">
   <div class="popup">
     <form action="/transactions/new" class="form-container" method="post">
-      <h3>New transaction</h3>
+      <h3>Expenses</h3>
+
       <label for="amount">Amount:</label>
       <input
         type="text"
