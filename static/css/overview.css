@@ -1,66 +1,94 @@
 body {
-    background: white;
-    color: black;
-    font-family: "Fredoka One", cursive;
-    font-family: "Readex Pro", sans-serif;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    transition: opacity 200ms;
-    visibility: hidden;
-    opacity: 0;
-  }
-  .popup {
-    margin: 250px auto;
-    padding: 20px;
-    background: white;
-    border: 1px solid #666;
-    border-radius: 20px;
-    width: 350px;
-    height: 350px;
-    box-shadow: 38px 38px 56px #1e1e1e, -25px -25px 38px #1e1e1e;
-    position: relative;
-    text-align: center;
-  }
-  .overlay:target {
-    visibility: visible;
-    opacity: 1;
-  }
-  .expense-btn {
-    border-radius: 55px;
-    border: 2px #1e1e1e;
-    color: #1e1e1e;
-    text-align: center;
-    background-color: blue;
-    width: 33%;
-  }
-  
-  .card {
-    background-color: bisque;
-    height: 150px;
-    width: 150px;
-  }
-  .card-expenses {
-    grid-area: row2;
-  }
-  .card-monthly {
-    grid-area: row3;
-  }
-  .card-weekly {
-    grid-area: row4;
-  }
-  .card-container {
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "empty button button button empty"
-    " row1 row2 row3 row4 row5 ";
-  }
-  
+  background: white;
+  color: black;
+  font-family: "Fredoka One", cursive;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.card h3 {
+  text-align: center;
+}
+.card p {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 200ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.popup {
+  margin: 250px auto;
+  padding: 20px;
+  background: white;
+  border: 1px solid #666;
+  border-radius: 20px;
+  width: 350px;
+  height: 350px;
+  box-shadow: 38px 38px 56px #1e1e1e, -25px -25px 38px #1e1e1e;
+  position: relative;
+  text-align: center;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.card {
+  border-radius: 10px;
+  background-color: bisque;
+  height: 150px;
+  width: 150px;
+}
+.expense-btn {
+  border-radius: 4px;
+  margin-bottom: 25px;
+  border: 5px #1e1e1e;
+  height: 40px;
+  width: 350px;
+}
+.header-text {
+  grid-area: header;
+}
+.button-container {
+  border-radius: 4px;
+  margin-bottom: 25px;
+  border: 5px #1e1e1e;
+  height: 40px;
+  width: 350px;
+  grid-area: button;
+}
+.card-expenses {
+  grid-area: row12;
+}
+.card-monthly {
+  grid-area: row13;
+}
+.card-weekly {
+  grid-area: row14;
+}
+
+.expense-container {
+  display: grid;
+  grid-template-columns: 20%, 20%, 20%, 20%, 20%;
+  grid-template-rows: minmax(100px, 1fr);
+  grid-template-areas:
+    "row1   header header   header  row5"
+    "row6   button  button  button row10"
+    "row11  row12  row13    row14  row15"
+    "row16  table  table    table  row7";
+  justify-items: center;
+}
+.table-container {
+  margin-top: 50px;
+  grid-area: table;
+}
+.table-labelbox th {
+  border-bottom: 10px #1e1e1e;
+}

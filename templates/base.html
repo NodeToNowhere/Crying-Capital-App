@@ -13,26 +13,20 @@
     />
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='css/styles.css')}}"
+      href="{{url_for('static', filename='css/navbar.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/overview.css')}}"
     />
   </head>
   <body class="base-body">
     <main class="base-main">
-      <nav class="base-nav">
-        <ul>
-          <li class="nav-top">
-            <a href="/">Overview</a>
-          </li>
-          <li class="nav-top">
-            <a href="/transactions">Expenses</a>
-          </li>
-          <li class="nav-top">
-            <a href="/merchants">Edit Merchants</a>
-          </li>
-          <li class="nav-top">
-            <a href="/tags">Edit Tags</a>
-          </li>
-        </ul>
+      <nav class="nav">
+        <div class="nav-title">Crying Capital</div>
+        <a href="/transactions">Overview</a>
+        <a href="/merchants">Edit Merchants</a>
+        <a href="/tags">Edit Tags</a>
       </nav>
 
       <section class="block-content">
