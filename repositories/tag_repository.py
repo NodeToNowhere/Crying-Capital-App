@@ -2,19 +2,12 @@ from db.run_sql import run_sql
 from models.tag import Tag
 
 
-# ---Create
-
-
 def save(tag):
     sql = "INSERT INTO tags(tag) VALUES (%s) RETURNING id"
     values = [tag.name]
     results = run_sql(sql, values)
     tag.id = results[0]["id"]
     return tag
-
-
-# ---Read
-
 
 def select(id):
     tag = None
@@ -26,7 +19,6 @@ def select(id):
         tag = Tag(result["tag"], result["id"])
     return tag
 
-
 def select_all():
     tags = []
     sql = "SELECT * FROM tags"
@@ -36,18 +28,10 @@ def select_all():
         tags.append(tag)
     return tags
 
-
-# ---Update
-
-
 def update(tag):
     sql = "UPDATE tags SET (name) = (%s) WHERE id = %s"
     values = [tag.name, tag.id]
     run_sql(sql, values)
-
-
-# --Delete
-
 
 def delete_all():
     sql = "DELETE FROM tags"

@@ -1,16 +1,11 @@
-from flask import Flask, render_template, request, redirect
-from flask import Blueprint
-from models.merchant import Merchant
-from models.tag import Tag
+from flask import Flask, render_template, request, redirect, Blueprint
 from models.transaction import Transaction
 import repositories.tag_repository as tag_repo
 import repositories.merchant_repository as merchant_repo
 import repositories.transaction_repository as transaction_repo
 from managers.transaction import *
 
-
 transaction_blueprint = Blueprint("transaction", __name__)
-
 
 @transaction_blueprint.route("/transactions")
 def transactions():
@@ -25,7 +20,6 @@ def transactions():
         total=total(),
     )
 
-
 @transaction_blueprint.route("/transactions/new", methods=["POST"])
 def new_transaction():
     merchant_id = request.form["merchant_id"]
@@ -39,7 +33,7 @@ def new_transaction():
     transaction_repo.save(transaction)
     return redirect("/transactions")
 
-
-@transaction_blueprint.route("/transactions/edit", methods=["POST"])
-def edit_transaction():
+@transaction_blueprint.route("/transactions/<id>/delete", methods=["POST"])
+def delete_transaction(id):
+    transaction_repo.delete(id)
     return redirect("/transactions")

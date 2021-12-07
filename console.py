@@ -53,6 +53,7 @@ transaction_repo.save(tran3)
 tran4 = Transaction(11.11, "8-8-88", "Monthly debt repayments", mer2, tag3)
 transaction_repo.save(tran4)
 
+
 print("The total is ", total())
 
 

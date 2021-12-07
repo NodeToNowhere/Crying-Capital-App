@@ -7,17 +7,10 @@ import repositories.merchant_repository as merchant_repo
 
 tags_blueprint = Blueprint("transactions", __name__)
 
-
 @tags_blueprint.route("/tags")
 def tags():
     tags = tag_repo.select_all()
     return render_template("tags/tags.html", tags=tags)
-
-
-# POST
-# show confirmation or goto tags?
-# split into tag and merchant (new)
-
 
 @tags_blueprint.route("/tags/new", methods=["POST"])
 def new_tag():
@@ -25,12 +18,9 @@ def new_tag():
     tag_repo.save(new_tag)
     return redirect("/tags")
 
-
-# DELETE
 @tags_blueprint.route("/tags/<id>/delete", methods=["POST"])
 def delete_tag(id):
     tag_repo.delete(id)
     return redirect("/tags")
 
-
-# add an edit function later
+# add an edit function?

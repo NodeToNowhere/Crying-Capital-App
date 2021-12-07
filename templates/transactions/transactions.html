@@ -2,7 +2,7 @@
 <h1>transactions</h1>
 <div>
   <p>
-<!-- ###----QUICK CREATE BUTTON----### -->
+    <!-- ###----QUICK CREATE BUTTON----### -->
     <a href="#transaction-form"
       ><button type="submit" class="create-new-btn">
         Create new transaction
@@ -10,14 +10,16 @@
     >
   </p>
   <!-- ###---SHOW DATA---###  -->
-  <p>
-    Your total expense is {{total}}
-  </p>
+  <p>Your total expense is {{total}}</p>
   {% for transaction in transactions %}
   <li>
-      >Amount:{{transaction.amount}}, Date:{{ transaction.date }},
-      Description:{{transaction.description}},
-      Merchant:{{transaction.merchant.name}}, Tag:{{transaction.tag.name}}</a>
+    Amount:{{transaction.amount}}, Date:{{ transaction.date }},
+    Description:{{transaction.description}},
+    Merchant:{{transaction.merchant.name}}, Tag:{{transaction.tag.name}}
+    <form action="/transactions/{{transaction.id}}/delete" method='post'>
+      <input type="submit" class="delete-btn" value="delete">
+    </form>
+    </form>
   </li>
   {% endfor %}
 </div>
@@ -56,11 +58,8 @@
         <option value="{{tag.id}}">{{tag.name}}</option>
         {% endfor %}
       </select>
-
       <button type="submit" class="submit-btn">Submit</button>
-      <a class="close" href="#"
-        ><button value="Cancel" class="cancel-btn">Cancel</button></a
-      >
+      <a class="close" href="#">&times;</a>
     </form>
   </div>
 </div>
