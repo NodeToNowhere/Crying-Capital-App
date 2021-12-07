@@ -1,23 +1,24 @@
 {% extends 'base.html' %} {% block content%}
 <main class="expense-container">
-  <h3>Overview</h3>
-  <a href="#transaction-form">
-    <button type="submit" class="new-expense-btn">
-      Create new transaction
-    </button></a
-  >
+  <h3 class="header-text">Overview</h3>
+  <div class="button-container">
+    <a href="#transaction-form">
+      <button type="submit" class="expense-btn">Add Expense</button></a
+    >
+  </div>
   <div class="card-container">
     <div class="card card-expenses">
       <h3>Expenses</h3>
-    </div>
-    <div class="card card-income">
-      <h3>Income</h3>
+      <!-- HERE BE DATA -->
     </div>
     <div class="card card-monthly">
       <h3>Monthly</h3>
+      <!-- HERE BE DATA -->
     </div>
     <div class="card card-weekly">
       <h3>Weekly</h3>
+      <!-- HERE BE DATA -->
+      <div class="table-container"></div>
     </div>
   </div>
 </main>
