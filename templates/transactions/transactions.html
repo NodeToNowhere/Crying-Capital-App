@@ -1,27 +1,79 @@
-{% extends 'base.html' %} {% block %}
-<main class="expense-container">
-  <h3>Overview</h3>
-  <a href="#transaction-form">
-    <button type="submit" class="new-expense-btn">
-      Create new transaction
-    </button></a
-  >
-  <div class="card-container">
-    <div class="card card-expenses">
-      <h3>Expenses</h3>
-    </div>
-    <div class="card card-income">
-      <h3>Income</h3>
-    </div>
-    <div class="card card-Monthly">
-      <h3>Monthly</h3>
-    </div>
-    <div class="card card-Weekly">
-      <h3>Weekly</h3>
-    </div>
+{% extends 'base.html' %} {% block content %}
+<h1>transactions</h1>
+<div>
+  <p>
+    <!-- ###----QUICK CREATE BUTTON----### -->
+    <a href="#transaction-form"
+      ><button type="submit" class="create-new-btn">
+        Create new transaction
+      </button></a
+    >
+  </p>
+  <!-- ###---SHOW DATA---###  -->
+  <p>Your total expense is {{total}}</p>
+  {% for transaction in transactions %}
+
+
+  <div class="expense-container">
     
   </div>
+      
 
-</main>
 
-{% endblock %}
+
+
+
+
+  <li>
+    Amount:{{transaction.amount}}, Date:{{ transaction.date }},
+    Description:{{transaction.description}},
+    Merchant:{{transaction.merchant.name}}, Tag:{{transaction.tag.name}}
+    <form action="/transactions/{{transaction.id}}/delete" method='post'>
+      <input type="submit" class="delete-btn" value="delete">
+    </form>
+    </form>
+  </li>
+  {% endfor %}
+</div>
+<!-- ###–––NEW TRANSACTION POPUP---### -->
+<div class="overlay" id="transaction-form">
+  <div class="popup">
+    <form action="/transactions/new" class="form-container" method="post">
+      <h3>Expenses</h3>
+
+      <label for="amount">Amount:</label>
+      <input
+        type="text"
+        placeholder="Enter transaction"
+        name="amount"
+        id="amount"
+      />
+
+      <label for="date">Date:</label>
+      <input type="text" placeholder="Enter date" name="date" id="date" />
+
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        placeholder="Enter description"
+        name="description"
+        id="description"
+      />
+      <label for="merchant">Merchant:</label>
+      <select name="merchant_id" id="merchant">
+        {% for merchant in merchants %}
+        <option value="{{merchant.id}}">{{merchant.name}}</option>
+        {% endfor %}
+      </select>
+      <label for="tag">Tag:</label>
+      <select name="tag_id" id="tag">
+        {% for tag in tags %}
+        <option value="{{tag.id}}">{{tag.name}}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="submit-btn">Submit</button>
+      <a class="close" href="#">&times;</a>
+    </form>
+  </div>
+</div>
+{% endblock content %}

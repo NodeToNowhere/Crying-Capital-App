@@ -2,12 +2,13 @@
 <main class="expense-container">
   <h2 class="header-text">Overview</h2>
   <a class="button-container" href="#transaction-form">
-    <button type="submit" class="expense-btn">Add Expense</button></a
-  >
+    <button type="submit" class="expense-btn">Add Expense</button>
+    <!-- <button type="submit" formaction="#transaction-form"></button> -->
+  </a>
 
   <div class="card card-expenses">
     <h3>Expenses</h3>
-    <!-- HERE BE DATA -->
+    <p>{{total}}</p>
   </div>
   <div class="card card-monthly">
     <h3>Monthly</h3>
@@ -16,28 +17,25 @@
   <div class="card card-weekly">
     <h3>Weekly</h3>
     <!-- HERE BE DATA -->
-    <div class="table-container"></div>
   </div>
 
-  <div class="table-container">
-    <table style="width: 100%">
-      <tr>
-        <th>Amount</th>
-        <th>Date</th>
-        <th>Description</th>
-        <th>Merchant</th>
-        <th>Tag</th>
-      </tr>
-      #JFOR loop to show 5-6 tables
-      <tr>
-          <!-- <td>HERE BE DATA</td> -->
-          <!-- <td>HERE BE DATA</td> -->
-          <!-- <td>HERE BE DATA</td> -->
-          <!-- <td>HERE BE DATA</td> -->
-          <!-- <td>HERE BE DATA</td> -->
-      </tr>
-    </table>
-  </div>
+  <table class="table-container" style="width: 100%">
+    <tr class="table-labelbox">
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Merchant</th>
+      <th>Tag</th>
+    </tr>
+    <!-- #FOR loop to show 5-6 tables -->
+    <tr>
+      <!-- <td>HERE BE DATA</td> -->
+      <!-- <td>HERE BE DATA</td> -->
+      <!-- <td>HERE BE DATA</td> -->
+      <!-- <td>HERE BE DATA</td> -->
+      <!-- <td>HERE BE DATA</td> -->
+    </tr>
+  </table>
 </main>
 
 {% endblock content%}
