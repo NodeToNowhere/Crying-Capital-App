@@ -1,3 +1,5 @@
+/* ###-----SEPERATE OUT CSS-----#### */
+
 body {
   font-family: "Fredoka One", cursive;
 }
@@ -22,15 +24,16 @@ body {
   opacity: 0;
 }
 .popup {
-  margin: 250px auto;
+  margin-left: 33%;
+  margin-top: 10%;
   padding: 20px;
   background: white;
   border: 1px solid #666;
   border-radius: 20px;
   width: 350px;
-  height: 350px;
-  box-shadow: 38px 38px 56px #1e1e1e, -25px -25px 38px #1e1e1e;
-  position: relative;
+  height: 250px;
+  box-shadow: 38px 38px 56px #1e1e1e, -25px -5px 38px #1e1e1e;
+  position: center;
   text-align: center;
 }
 .overlay:target {
@@ -45,14 +48,18 @@ body {
 }
 .expense-btn {
   border-radius: 4px;
-  margin-bottom: 25px;
   border: 5px #1e1e1e;
   height: 40px;
   width: 350px;
 }
+.expense-btn:hover {
+  background-color: #666;
+}
+
 .header-text {
   grid-area: header;
   font-weight: 700;
+  margin-top: 35px;
 }
 .button-container {
   border-radius: 4px;
@@ -62,6 +69,7 @@ body {
   width: 350px;
   grid-area: button;
 }
+
 .card-expenses {
   grid-area: row12;
 }
@@ -87,6 +95,22 @@ body {
   margin-top: 50px;
   grid-area: table;
 }
-.table-labelbox th {
-  border-bottom: 10px #1e1e1e;
+
+.table tr td {
+  border-bottom: #1e1e1e 15px;
+  text-align: center;
+}
+
+.table {
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+}
+
+tr:nth-child(even) {
+  background-color: beige;
 }

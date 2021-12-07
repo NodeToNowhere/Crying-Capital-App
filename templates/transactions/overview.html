@@ -20,7 +20,7 @@
     <!-- HERE BE DATA -->
   </div>
 
-  <table class="table-container" style="width: 100%">
+  <table class="table table-container" style="width: 100%">
     <tr class="table-labelbox">
       <th>Amount</th>
       <th>Date</th>
@@ -30,17 +30,61 @@
     </tr>
     {% for transaction in transactions %}
     <tr>
-      <th>{{transaction.amount}}</th>
-      <th>{{ transaction.date }}</th>
-      <th>{{transaction.description}}</th>
-      <th>{{transaction.merchant.name}}</th>
-      <th>
+      <td>£ {{transaction.amount}}</td>
+      <td>{{ transaction.date }}</td>
+      <td>{{transaction.description}}</td>
+      <td>{{transaction.merchant.name}}</td>
+      <td>
         {{transaction.tag.name}}
-        <input type="submit" class="btn delete-btn" value="delete" />
-      </th>
+        <form action="/transactions/{{ transaction.id }}/delete" method="POST">
+          <input class="delete-btn" type="submit" value="delete" />
+        </form>
+      </td>
     </tr>
     {% endfor %}
   </table>
 </main>
+
+<!-- ###–––NEW TRANSACTION POPUP---### -->
+<div class="overlay" id="transaction-form">
+  <div class="popup">
+    <form action="/transactions/new" class="form-container" method="post">
+      <h3>Expenses</h3>
+
+      <label class="form-amount" for="amount">Amount:</label>
+      <input
+        type="text"
+        placeholder="Enter transaction"
+        name="amount"
+        id="amount"
+      />
+
+      <label class="form-date" for="date">Date:</label>
+      <input type="date" placeholder="Enter Date" name="date" id="date" />
+
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        placeholder="Enter description"
+        name="description"
+        id="description"
+      />
+      <label for="merchant">Merchant:</label>
+      <select name="merchant_id" id="merchant">
+        {% for merchant in merchants %}
+        <option value="{{merchant.id}}">{{merchant.name}}</option>
+        {% endfor %}
+      </select>
+      <label for="tag">Tag:</label>
+      <select name="tag_id" id="tag">
+        {% for tag in tags %}
+        <option value="{{tag.id}}">{{tag.name}}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="submit-btn">Submit</button>
+      <a class="close" href="#">&times;</a>
+    </form>
+  </div>
+</div>
 
 {% endblock content%}
