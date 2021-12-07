@@ -12,7 +12,7 @@ from managers.transaction import total
 merchant_repo.delete_all()
 tags_repo.delete_all()
 
-transaction_repo.setdefault()
+# transaction_repo.set_default()
 
 mer1 = Merchant("Amazon")
 merchant_repo.save(mer1)

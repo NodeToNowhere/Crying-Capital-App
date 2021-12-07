@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html class="base-html">
+  <head class="base-head">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Expense Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Readex+Pro:wght@300&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='css/popups.css')}}"
+      href="{{url_for('static', filename='css/styles.css')}}"
     />
   </head>
-  <body>
-    <main>
-      <nav>
+  <body class="base-body">
+    <main class="base-main">
+
+      <nav class="base-nav">
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/">Dashboard</a>
+          </li>
+          <li>
+            <a href="/transactions">Expenses</a>
+          </li>
+          <li>
+            <a href="/merchants">Merchants</a>
           </li>
           <li>
             <a href="/tags">Tags</a>
           </li>
-          <li>
-            <a href="/merchants">merchants</a>
-          </li>
-          <li>
-            <a href="/transactions">Transactions</a>
-          </li>
         </ul>
       </nav>
 
-      <section>{% block content %} {% endblock %}</section>
+      <section class="block-content">{% block content %} {% endblock %}</section>
     </main>
   </body>
 </html>
