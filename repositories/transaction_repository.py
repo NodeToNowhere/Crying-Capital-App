@@ -5,6 +5,7 @@ from models.tag import Tag
 import repositories.merchant_repository as merchant_repo
 import repositories.tag_repository as tag_repo
 
+
 def save(transaction):
     sql = "INSERT INTO transactions(amount, date, description, merchant_id,tag_id) VALUES (%s,%s,%s,%s,%s) RETURNING id"
     values = [
@@ -18,6 +19,7 @@ def save(transaction):
     transaction.id = results[0]["id"]
     return transaction
 
+
 def select(id):
     transaction = None
     sql = "SELECT * FROM transactions WHERE id = %s"
@@ -27,6 +29,7 @@ def select(id):
     if result is not None:
         transaction = Transaction(result["transaction"])
     return transaction
+
 
 def select_all():
     transactions = []
@@ -41,6 +44,7 @@ def select_all():
         transactions.append(transaction)
     return transactions
 
+
 def update(transaction):
     sql = "UPDATE transactions SET (amount,date,description,merchant_id,tag_id) = (%s,%s,%s,%s,%s) WHERE id = %s"
     values = [
@@ -52,6 +56,7 @@ def update(transaction):
         transaction.id,
     ]
     run_sql(sql, values)
+
 
 def delete_all():
     sql = "DELETE FROM transactions"
