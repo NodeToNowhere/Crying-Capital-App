@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content%}
 <main class="expense-container">
-  <h3 class="header-text">Overview</h3>
+  <h2 class="header-text">Overview</h2>
   <a class="button-container" href="#transaction-form">
     <button type="submit" class="expense-btn">Add Expense</button></a
   >
@@ -17,6 +17,26 @@
     <h3>Weekly</h3>
     <!-- HERE BE DATA -->
     <div class="table-container"></div>
+  </div>
+
+  <div class="table-container">
+    <table style="width: 100%">
+      <tr>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Merchant</th>
+        <th>Tag</th>
+      </tr>
+      #JFOR loop to show 5-6 tables
+      <tr>
+          <!-- <td>HERE BE DATA</td> -->
+          <!-- <td>HERE BE DATA</td> -->
+          <!-- <td>HERE BE DATA</td> -->
+          <!-- <td>HERE BE DATA</td> -->
+          <!-- <td>HERE BE DATA</td> -->
+      </tr>
+    </table>
   </div>
 </main>
 

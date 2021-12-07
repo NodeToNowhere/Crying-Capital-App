@@ -43,16 +43,11 @@ body {
   width: 150px;
 }
 .expense-btn {
-  height: 50px;
-  width: 150px;
-  margin-top: 25px;
+  border-radius: 4px;
   margin-bottom: 25px;
-  border-radius: 25px;
-  border: 10px #1e1e1e;
-  color: #1e1e1e;
-  text-align: center;
-  background-color: blue;
-  width: 100%;
+  border: 5px #1e1e1e;
+  height: 40px;
+  width: 350px;
 }
 /* .header-text {
   grid-area: h1;
