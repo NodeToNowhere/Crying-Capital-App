@@ -11,7 +11,7 @@ CREATE TABLE transactions(
     amount INT,
     date VARCHAR(31),
     description TEXT,
-    merchant_id INT NULL REFERENCES merchants(id),
-    tag_id INT NULL REFERENCES tags(id) -- ON DELETE SET NULL --
-    -- ON DELETE CASCADE --
+    merchant_id INT NULL REFERENCES merchants(id)
+        tag_id INT NULL REFERENCES tags(id) -- ON DELETE SET NULL --
+        -- ON DELETE CASCADE --
 );

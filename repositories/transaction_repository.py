@@ -67,3 +67,15 @@ def delete(id):
     sql = "DELETE FROM transactions WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def set_default():
+    sql_default_m = "ALTER TABLE ONLY transactions ALTER COLUMN merchant_id SET DEFAULT ''"
+    sql_update_m = "UPDATE transactions SET merchant_id = '' WHERE lang IS NULL"
+    sql_default_t = "ALTER TABLE ONLY transactions ALTER COLUMN tag_id SET DEFAULT ''"
+    sql_update_t = "UPDATE transactions SET tag_id = '' WHERE lang IS NULL"
+    
+    run_sql(sql_default_m)
+    run_sql(sql_update_m)
+    run_sql(sql_default_t)
+    run_sql(sql_update_t)
+    
