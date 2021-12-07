@@ -36,3 +36,8 @@ def new_transaction():
     transaction = Transaction(amount, date, description, merchant, tag)
     transaction_repo.save(transaction)
     return redirect("/transactions")
+
+
+@transaction_blueprint.route("/transactions/edit", methods=["POST"])
+def edit_transaction():
+    return redirect("/transactions")

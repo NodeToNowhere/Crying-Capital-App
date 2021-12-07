@@ -16,12 +16,16 @@
       <input type="text" placeholder="Enter tag" name="tag_name" id="tag" />
 
       <button type="submit" class="submit-btn">Submit</button>
-      <a href="#"><button type="submit" class="cancel-btn">Cancel</button></a>
+      <a class="close" href="#"><button class="cancel-btn">Cancel</button></a>
     </form>
   </div>
 </div>
 
 {% for tag in tags %}
+<p>
 <li>tag:{{tag.name}}</li>
-
+<form action="/tags/{{tag.id}}/delete" method='post'>
+  <input type="submit" class="delete-btn" value="delete">
+</form>
+</p>
 {% endfor %} {% endblock content %}

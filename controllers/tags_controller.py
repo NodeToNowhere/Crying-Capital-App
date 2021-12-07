@@ -27,10 +27,9 @@ def new_tag():
 
 
 # DELETE
-@tags_blueprint.route("/tags/delete/<id>", methods=["POST"])
-def delete_label(id):
+@tags_blueprint.route("/tags/<id>/delete", methods=["POST"])
+def delete_tag(id):
     tag_repo.delete(id)
-    merchant_repo.delete(id)
     return redirect("/tags")
 
 

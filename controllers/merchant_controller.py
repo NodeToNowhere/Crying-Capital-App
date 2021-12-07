@@ -18,3 +18,8 @@ def new_merchant():
     new_merchant = Merchant(request.form["merchant_name"])
     merchant_repo.save(new_merchant)
     return redirect("/merchants")
+
+@merchant_blueprint.route("/merchants/<id>/delete", methods=['POST'])
+def delete_merchant(id):
+    merchant_repo.delete(id)
+    return redirect("/merchants")

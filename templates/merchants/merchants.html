@@ -1,34 +1,38 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Merchants</h1>
 <div>
-    <p>
-      <a href="#merchant-form"
-        ><button type="submit" class="create-new-btn">
-          Create new merchant
-        </button></a
-      >
-    </p>
+  <p>
+    <a href="#merchant-form"
+      ><button type="submit" class="create-new-btn">
+        Create new merchant
+      </button></a
+    >
+  </p>
+</div>
+<div class="overlay" id="merchant-form">
+  <div class="popup">
+    <form action="/merchants/new" class="form-container" method="post">
+      <h3>New Merchant</h3>
+
+      <label for="merchant">Name:</label>
+      <input
+        type="text"
+        placeholder="Enter Merchant"
+        name="merchant_name"
+        id="merchant"
+      />
+
+      <button type="submit" class="submit-btn">Submit</button>
+      <a class="close" href="#"><button class="cancel-btn">Cancel</button></a>
+    </form>
   </div>
-  <div class="overlay" id="merchant-form">
-    <div class="popup">
-      <form action="/merchants/new" class="form-container" method="post">
-        <h3>New Merchant</h3>
-  
-        <label for="merchant">Name:</label>
-        <input
-          type="text"
-          placeholder="Enter Merchant"
-          name="merchant_name"
-          id="merchant"
-        />
-  
-        <button type="submit" class="submit-btn">Submit</button>
-        <a href="#"><button type="submit" class="cancel-btn">Cancel</button></a>
-      </form>
-    </div>
-  </div>
+</div>
 
 {% for merchant in merchants %}
+<p>
 <li>Merchant:{{merchant.name}}</li>
-
+<form action="/merchants/{{merchant.id}}/delete" method='post'>
+  <input type="submit" class="delete-btn" value="delete">
+</form>
+</p>
 {% endfor %} {% endblock content %}

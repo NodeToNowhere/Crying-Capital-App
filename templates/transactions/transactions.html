@@ -2,18 +2,27 @@
 <h1>transactions</h1>
 <div>
   <p>
+<!-- ###----QUICK CREATE BUTTON----### -->
     <a href="#transaction-form"
       ><button type="submit" class="create-new-btn">
         Create new transaction
       </button></a
     >
   </p>
+  <!-- ###---SHOW DATA---###  -->
+  {% for transaction in transactions %}
+  <li>
+      >Amount:{{transaction.amount}}, Date:{{ transaction.date }},
+      Description:{{transaction.description}},
+      Merchant:{{transaction.merchant.name}}, Tag:{{transaction.tag.name}}</a>
+  </li>
+  {% endfor %}
 </div>
+<!-- ###–––NEW TRANSACTION POPUP---### -->
 <div class="overlay" id="transaction-form">
   <div class="popup">
     <form action="/transactions/new" class="form-container" method="post">
       <h3>New transaction</h3>
-
       <label for="amount">Amount:</label>
       <input
         type="text"
@@ -46,16 +55,10 @@
       </select>
 
       <button type="submit" class="submit-btn">Submit</button>
-      <a href="#"><button type="submit" class="cancel-btn">Cancel</button></a>
+      <a class="close" href="#"
+        ><button value="Cancel" class="cancel-btn">Cancel</button></a
+      >
     </form>
   </div>
 </div>
-
-{% for transaction in transactions %}
-<li>
-  Amount:{{transaction.amount}}, Date:{{ transaction.date }},
-  Description:{{transaction.description}},
-  Merchant:{{transaction.merchant.name}}, Tag:{{transaction.tag.name}}
-</li>
-
-{% endfor %} {% endblock content %}
+{% endblock content %}
