@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Expense Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Readex+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Readex+Pro:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="{{url_for('static', filename='css/styles.css')}}"
@@ -15,11 +18,10 @@
   </head>
   <body class="base-body">
     <main class="base-main">
-
       <nav class="base-nav">
         <ul>
           <li>
-            <a href="/">Dashboard</a>
+            <a href="/">Overview</a>
           </li>
           <li>
             <a href="/transactions">Expenses</a>
@@ -33,7 +35,9 @@
         </ul>
       </nav>
 
-      <section class="block-content">{% block content %} {% endblock %}</section>
+      <section class="block-content">
+        {% block content %} {% endblock %}
+      </section>
     </main>
   </body>
 </html>

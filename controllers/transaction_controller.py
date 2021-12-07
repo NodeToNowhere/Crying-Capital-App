@@ -7,18 +7,20 @@ from managers.transaction import *
 
 transaction_blueprint = Blueprint("transaction", __name__)
 
+
 @transaction_blueprint.route("/transactions")
 def transactions():
     tags = tag_repo.select_all()
     merchants = merchant_repo.select_all()
     transactions = transaction_repo.select_all()
     return render_template(
-        "transactions/transactions.html",
+        "transactions/overview.html",
         transactions=transactions,
         tags=tags,
         merchants=merchants,
         total=total(),
     )
+
 
 @transaction_blueprint.route("/transactions/new", methods=["POST"])
 def new_transaction():
@@ -32,6 +34,7 @@ def new_transaction():
     transaction = Transaction(amount, date, description, merchant, tag)
     transaction_repo.save(transaction)
     return redirect("/transactions")
+
 
 @transaction_blueprint.route("/transactions/<id>/delete", methods=["POST"])
 def delete_transaction(id):

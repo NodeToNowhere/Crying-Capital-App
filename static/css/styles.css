@@ -33,6 +33,26 @@ body {
   opacity: 1;
 }
 
-.form-container {
-  display: grid | inline-grid;
+.card-container {
+  display: grid;
+  grid-template-columns: 25px 25px 25px 25px 25px 25px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    " row1 row2 row3 row4 row5 row6"
+    " row7 row8 row9 row10 row11 row12";
 }
+
+.new-expense-btn {
+  border-radius: 5px;
+  border: #1e1e1e;
+  color: #1e1e1e;
+  text-align: center;
+  background-color: transparent;
+  width: 50%;
+}
+.card {
+  background-color: bisque;
+  height: 20px;
+  width: 20px;
+}
+.card
