@@ -6,6 +6,7 @@ from models.transaction import Transaction
 import repositories.tag_repository as tag_repo
 import repositories.merchant_repository as merchant_repo
 import repositories.transaction_repository as transaction_repo
+from managers.transaction import *
 
 
 transaction_blueprint = Blueprint("transaction", __name__)
@@ -21,6 +22,7 @@ def transactions():
         transactions=transactions,
         tags=tags,
         merchants=merchants,
+        total=total(),
     )
 
 

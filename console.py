@@ -1,10 +1,13 @@
 import pdb
+from controllers.transaction_controller import transactions
 from models.merchant import Merchant
 from models.tag import Tag
 from models.transaction import Transaction
 import repositories.merchant_repository as merchant_repo
 import repositories.tag_repository as tags_repo
 import repositories.transaction_repository as transaction_repo
+from managers.transaction import total
+
 
 merchant_repo.delete_all()
 tags_repo.delete_all()
@@ -49,6 +52,10 @@ transaction_repo.save(tran3)
 
 tran4 = Transaction(11.11, "8-8-88", "Monthly debt repayments", mer2, tag3)
 transaction_repo.save(tran4)
+
+print("The total is ", total())
+
+
 pdb.set_trace()
 
 

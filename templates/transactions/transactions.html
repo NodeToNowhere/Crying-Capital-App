@@ -10,6 +10,9 @@
     >
   </p>
   <!-- ###---SHOW DATA---###  -->
+  <p>
+    Your total expense is {{total}}
+  </p>
   {% for transaction in transactions %}
   <li>
       >Amount:{{transaction.amount}}, Date:{{ transaction.date }},
