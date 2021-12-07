@@ -13,3 +13,25 @@
   background-color: #4d4d4d;
   position: relative;
 }
+
+.nav-title {
+  display: inline;
+  font-size: 30px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav-links {
+  display: inline;
+  float: right;
+  font-size: 20px;
+  padding: 10px 10px 10px 10px;
+}
+.nav-links a {
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  color: aliceblue;
+}
+a:hover {
+  background-color: #1e1e1e;
+}
