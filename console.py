@@ -14,10 +14,10 @@ tags_repo.delete_all()
 
 # transaction_repo.set_default()
 
-mer1 = Merchant("CorpCorp")
+mer1 = Merchant("SomeCorp")
 merchant_repo.save(mer1)
 
-mer2 = Merchant("EvilCorp")
+mer2 = Merchant("AnotherCorp")
 merchant_repo.save(mer2)
 
 mer3 = Merchant("ShellCorp")

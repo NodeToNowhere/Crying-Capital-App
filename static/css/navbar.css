@@ -3,21 +3,17 @@
   font-family: "Readex Pro", sans-serif;
 }
 
-.html {
-  background-color: aquamarine;
-}
-
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: #073b4c;
   position: relative;
 }
 
 .nav-title {
   display: inline;
   font-size: 30px;
-  color: #fff;
+  color: #ffd166;
   padding: 10px 10px 10px 10px;
 }
 
@@ -30,8 +26,8 @@
 .nav-links a {
   padding: 10px 10px 10px 10px;
   text-decoration: none;
-  color: aliceblue;
+  color: #ffd166;
 }
 a:hover {
-  background-color: #1e1e1e;
+  background-color: #118ab2;
 }

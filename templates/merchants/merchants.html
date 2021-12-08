@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 <main class="expense-container">
-  <h2 class="header-text">merchants</h2>
+  <h2 class="header-text">Merchants</h2>
   <a class="button-container" href="#merchant-form">
     <button type="submit" class="expense-btn">Create Merchant</button>
   </a>
 
   <table class="table table-container" style="width: 100%">
     <tr class="table-labelbox">
-      <th>merchant name</th>
+      <th class="table-name">Merchant name</th>
       <th></th>
     </tr>
     {% for merchant in merchants %}

@@ -18,7 +18,7 @@ body {
 }
 .card {
   border-radius: 10px;
-  background-color: bisque;
+  background-color: #b1a7a6;
   height: 150px;
   width: 350px;
 }
@@ -28,7 +28,6 @@ body {
   font-weight: 700;
   margin-top: 35px;
 }
-
 
 .card-expenses {
   grid-area: row13;
@@ -51,7 +50,7 @@ body {
 }
 
 .table tr td {
-  border-bottom: #1e1e1e 15px;
+  border-bottom: #495057 15px;
   text-align: center;
 }
 
@@ -62,9 +61,12 @@ body {
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid #495057;
 }
 
 tr:nth-child(even) {
-  background-color: beige;
+  background-color: #ced4da;
+}
+.table-name {
+  font-size: large;
 }
