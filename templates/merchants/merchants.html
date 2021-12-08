@@ -1,41 +1,45 @@
 {% extends 'base.html' %} {% block content %}
+<main class="expense-container">
+  <h2 class="header-text">merchants</h2>
+  <a class="button-container" href="#merchant-form">
+    <button type="submit" class="expense-btn">Create Merchant</button>
+  </a>
 
-<h1>Merchants</h1>
-<div>
-  <p>
-    <a href="#merchant-form"
-      ><button type="submit" class="create-new-btn">
-        Create new merchant
-      </button></a
-    >
-  </p>
-</div>
+  <table class="table table-container" style="width: 100%">
+    <tr class="table-labelbox">
+      <th>merchant name</th>
+      <th>Delete</th>
+    </tr>
+    {% for merchant in merchants %}
+    <tr>
+      <td>{{merchant.name}}</td>
+      <td>
+        <form action="/merchants/{{ merchant.id }}/delete" method="POST">
+          <input class="delete-btn" type="submit" value="delete" />
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</main>
+
+<!-- ###–––NEW merchant POPUP---### -->
 <div class="overlay" id="merchant-form">
   <div class="popup">
     <form action="/merchants/new" class="form-container" method="post">
-      <h3>New Merchant</h3>
+      <h3>Create new merchant</h3>
 
-      <label for="merchant">Name:</label>
+      <label class="form-name" for="merchant_name">merchant name:</label>
       <input
         type="text"
-        placeholder="Enter Merchant"
+        placeholder="Enter new merchant"
         name="merchant_name"
-        id="merchant"
+        id="merchant_name"
       />
-
       <button type="submit" class="submit-btn">Submit</button>
-      <a class="close" href="#"
-        >&times;</a
-      >
+      <a class="close" href="#">&times;</a>
     </form>
   </div>
 </div>
 
-{% for merchant in merchants %}
-<p>
-<li>Merchant:{{merchant.name}}</li>
-<form action="/merchants/{{merchant.id}}/delete" method='post'>
-  <input type="submit" class="delete-btn" value="delete">
-</form>
-</p>
-{% endfor %} {% endblock content %}
+{% endblock content%}

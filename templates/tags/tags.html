@@ -1,32 +1,45 @@
 {% extends 'base.html' %} {% block content %}
-<h1>tags</h1>
-<div>
-  <p>
-    <a href="#tag-form"
-      ><button type="submit" class="create-new-btn">Create new tag</button></a
-    >
-  </p>
-</div>
+<main class="expense-container">
+  <h2 class="header-text">Tags</h2>
+  <a class="button-container" href="#tag-form">
+    <button type="submit" class="expense-btn">Create Tag</button>
+  </a>
+
+  <table class="table table-container" style="width: 100%">
+    <tr class="table-labelbox">
+      <th>Tag name</th>
+      <th>Delete</th>
+    </tr>
+    {% for tag in tags %}
+    <tr>
+      <td>{{tag.name}}</td>
+      <td>
+        <form action="/tags/{{ tag.id }}/delete" method="POST">
+          <input class="delete-btn" type="submit" value="delete" />
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</main>
+
+<!-- ###–––NEW TAG POPUP---### -->
 <div class="overlay" id="tag-form">
   <div class="popup">
     <form action="/tags/new" class="form-container" method="post">
-      <h3>New tag</h3>
+      <h3>Create new tag</h3>
 
-      <label for="tag">Name:</label>
-      <input type="text" placeholder="Enter tag" name="tag_name" id="tag" />
-
+      <label class="form-name" for="tag_name">Tag name:</label>
+      <input
+        type="text"
+        placeholder="Enter new tag"
+        name="tag_name"
+        id="tag_name"
+      />
       <button type="submit" class="submit-btn">Submit</button>
-      <a class="close" href="#"
-        >&times;</a
-      >
+      <a class="close" href="#">&times;</a>
     </form>
   </div>
 </div>
-{% for tag in tags %}
-<p>
-<li>tag:{{tag.name}}</li>
-<form action="/tags/{{tag.id}}/delete" method='post'>
-  <input type="submit" class="delete-btn" value="delete">
-</form>
-</p>
-{% endfor %} {% endblock content %}
+
+{% endblock content%}
