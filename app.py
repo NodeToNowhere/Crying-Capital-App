@@ -18,13 +18,6 @@ app.register_blueprint(tags_blueprint)
 app.register_blueprint(transaction_blueprint)
 
 
-@app.route("/")
-def home():
-    app.logger.info("Info level log")
-    app.logger.warning("Warning level log")
-    return render_template("index.html", test="THIS IS A TEST")
-
-
 if __name__ == "__main__":
     app.run(debug=True)
 

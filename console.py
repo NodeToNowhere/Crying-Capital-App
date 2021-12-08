@@ -14,7 +14,7 @@ tags_repo.delete_all()
 
 # transaction_repo.set_default()
 
-mer1 = Merchant("Amazon")
+mer1 = Merchant("CorpCorp")
 merchant_repo.save(mer1)
 
 mer2 = Merchant("EvilCorp")
@@ -51,7 +51,7 @@ transaction_repo.save(tran2)
 tran3 = Transaction(23.12, "9-9-99", "Spam and juice", mer1, tag1)
 transaction_repo.save(tran3)
 
-tran4 = Transaction(11.11, "8-8-88", "Monthly debt repayments", mer2, tag3)
+tran4 = Transaction(11.11, "8-8-88", "Debt repayments", mer2, tag3)
 transaction_repo.save(tran4)
 
 

@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
-from models.merchant import Merchant
+
 from models.tag import Tag
 import repositories.tag_repository as tag_repo
-import repositories.merchant_repository as merchant_repo
+
 
 tags_blueprint = Blueprint("transactions", __name__)
 

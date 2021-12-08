@@ -8,6 +8,11 @@ from managers.transaction import *
 transaction_blueprint = Blueprint("transaction", __name__)
 
 
+@transaction_blueprint.route("/")
+def home():
+    return redirect("/transactions")
+
+
 @transaction_blueprint.route("/transactions")
 def transactions():
     tags = tag_repo.select_all()
