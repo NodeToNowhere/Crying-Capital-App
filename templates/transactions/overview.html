@@ -50,10 +50,10 @@
         name="amount"
         id="amount"
       />
-
+      <br />
       <label class="form-date" for="date">Date:</label>
       <input type="date" placeholder="Enter Date" name="date" id="date" />
-
+      <br />
       <label for="description">Description:</label>
       <input
         type="text"
@@ -61,18 +61,21 @@
         name="description"
         id="description"
       />
+      <br />
       <label for="merchant">Merchant:</label>
       <select name="merchant_id" id="merchant">
         {% for merchant in merchants %}
         <option value="{{merchant.id}}">{{merchant.name}}</option>
         {% endfor %}
       </select>
+      <br />
       <label for="tag">Tag:</label>
       <select name="tag_id" id="tag">
         {% for tag in tags %}
         <option value="{{tag.id}}">{{tag.name}}</option>
         {% endfor %}
       </select>
+      <br />
       <button type="submit" class="submit-btn">Submit</button>
       <a class="close" href="#">&times;</a>
     </form>
