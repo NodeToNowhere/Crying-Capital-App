@@ -20,7 +20,7 @@ tr {
 }
 
 tr:nth-child(even) {
-  background-color: #ced4da;
+  background-color: rgb(157, 208, 252, 0.5);
   border-radius: 5px;
 }
 .table-name {
