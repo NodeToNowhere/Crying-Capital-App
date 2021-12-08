@@ -1,0 +1,28 @@
+.table-container {
+  margin-top: 50px;
+  grid-area: table;
+}
+
+.table tr td {
+  text-align: center;
+  border: 1px solid rgba(103, 134, 143, 0.3);
+}
+
+.table {
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+td,
+th,
+tr {
+  border: 1px solid rgba(103, 134, 143, 0.3);
+}
+
+tr:nth-child(even) {
+  background-color: #ced4da;
+  border-radius: 5px;
+}
+.table-name {
+  font-size: large;
+}
