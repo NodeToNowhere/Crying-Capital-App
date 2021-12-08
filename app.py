@@ -20,6 +20,3 @@ app.register_blueprint(transaction_blueprint)
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-# ask/find info about why I have to route '/' to app.
