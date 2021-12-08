@@ -6,7 +6,7 @@ from models.transaction import Transaction
 import repositories.merchant_repository as merchant_repo
 import repositories.tag_repository as tags_repo
 import repositories.transaction_repository as transaction_repo
-from managers.transaction import total
+from managers.transaction import *
 
 
 merchant_repo.delete_all()
@@ -56,6 +56,7 @@ transaction_repo.save(tran4)
 
 
 print("The total is ", total())
+print("dates:", get_dates())
 
 
 pdb.set_trace()
