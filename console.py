@@ -8,7 +8,7 @@ import repositories.tag_repository as tags_repo
 import repositories.transaction_repository as transaction_repo
 from managers.transaction import *
 
-
+transaction_repo.delete_all()
 merchant_repo.delete_all()
 tags_repo.delete_all()
 

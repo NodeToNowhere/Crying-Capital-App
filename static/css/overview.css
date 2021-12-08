@@ -44,7 +44,7 @@ body {
   border-radius: 10px;
   background-color: bisque;
   height: 150px;
-  width: 150px;
+  width: 350px;
 }
 .expense-btn {
   border-radius: 4px;
@@ -71,13 +71,7 @@ body {
 }
 
 .card-expenses {
-  grid-area: row12;
-}
-.card-monthly {
   grid-area: row13;
-}
-.card-weekly {
-  grid-area: row14;
 }
 
 .expense-container {
