@@ -11,14 +11,15 @@
 
 **Set up:**
 
-   - Create the database: "dropdb expense_tracker", then "createdb expense_tracker"
-   - Add the database tables: Within project directory enter "psql -d expense_tracker -f db/expense_tracker.sql"
-   - Add seed data: Within project directory enter enter "python3 console.py"
+   - All terminal commands entered within main directory
+   - Create the database: `dropdb expense_tracker`, then `createdb expense_tracker`
+   - Add the database tables: `psql -d expense_tracker -f db/expense_tracker.sql`
+   - Add seed data: `python3 console.py`
 
 **Run:**
 
-   - Launch Flask: Within project directory enter "Flask run"
-   - Homepage: Goto localhost:5000/
+   - Launch Flask: `flask run`
+   - Homepage: In brower go to localhost:5000/
 
 
 **Screenshot**
