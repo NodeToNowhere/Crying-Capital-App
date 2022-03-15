@@ -1,5 +1,7 @@
 # H1 Expense tracker - flask project
 
+---
+
 **Dependencies:**
 
    - Python3
@@ -17,3 +19,8 @@
 
    - Launch Flask: Within project directory enter "Flask run"
    - Homepage: Goto localhost:5000/
+
+
+**Screenshot**
+---
+<img src="https://github.com/NodeToNowhere/Expense-Tracker-Project/blob/main/assets/Preview.png" width="50%" height="50%">
