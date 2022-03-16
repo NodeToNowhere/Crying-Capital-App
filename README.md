@@ -22,6 +22,14 @@
    - Homepage: In brower go to localhost:5000/
 
 
+**For Windows**
+   - `npm install flask'
+   - `npm install psycopg2-binary'
+   -  Create db + add tables
+   - `python console.py`
+   - `python app.py`
+
+
 **Screenshot**
 ---
 <img src="https://github.com/NodeToNowhere/Expense-Tracker-Project/blob/main/assets/Preview.png" width="50%" height="50%">
