@@ -19,7 +19,7 @@
 **Run:**
 
 - Launch Flask: `flask run`
-- Homepage: In browsgit er go to localhost:5000/
+- Homepage: In browser go to localhost:5000/
 
 **For Windows**
 
