@@ -2,34 +2,34 @@
 
 <img src="https://github.com/NodeToNowhere/Expense-Tracker-Project/blob/main/assets/Preview.png" width="50%" height="50%">
 
-**Dependencies:**
-
 ---
+
+**Dependencies:**
 
 - Python3
 - Flask
 - Postgres
 - Psycopg2
 
-**Set up:**
-
 ---
+
+**Set up:**
 
 - All terminal commands entered within main directory
 - Create the database: `dropdb expense_tracker`, then `createdb expense_tracker`
 - Add the database tables: `psql -d expense_tracker -f db/expense_tracker.sql`
 - Add seed data: `python3 console.py`
 
-**Run:**
-
 ---
+
+**Run:**
 
 - Launch Flask: `flask run`
 - Homepage: In browser go to localhost:5000/
 
-**For Windows**
-
 ---
+
+**For Windows**
 
 - All terminal commands entered within main directory
 - Create the database: `dropdb expense_tracker`, then `createdb expense_tracker`
