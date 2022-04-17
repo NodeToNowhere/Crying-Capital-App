@@ -2,8 +2,6 @@
 
 <img src="https://github.com/NodeToNowhere/Expense-Tracker-Project/blob/main/assets/Preview.png" width="50%" height="50%">
 
----
-
 **Dependencies:**
 
 ---
